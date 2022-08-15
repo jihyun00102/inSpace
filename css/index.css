@@ -1,0 +1,444 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Gulzar&family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*{box-sizing: border-box; font-family: 'Poppins', sans-serif;}
+body,html{margin: 0; padding: 0;}
+h1,h2,h3,h4,h5,h6,p{margin: 0;}
+ul,ol{margin: 0; padding: 0; list-style: none;}
+a{text-decoration: none;}
+
+
+#header{
+    background-color: rgba(0,0,0,0.8);
+    position: fixed;
+    width: 100%; height: 80px;
+    top: 0;
+    z-index: 100;
+}
+#header .wrap{
+    width: 1200px; height: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+#header .wrap .logo{
+    float: left;
+    padding: 10px 0;
+}
+#header .wrap .logo a{}
+#header .wrap .logo a img{
+    display: block;
+    height: 60px;
+}
+
+#header .wrap nav{
+    padding: calc(65px / 2) 0;
+    float: right;
+}
+#header .wrap nav ul{
+    float: left;
+    padding: 0 20px;
+}
+#header .wrap nav ul li{float: left;}
+#header .wrap nav ul li a{
+    display: block;
+    color: #fff;
+    line-height: 1;
+    text-transform: uppercase;
+    margin: 0 20px;
+    font-size: 15px;
+}
+#header .wrap nav ul li:hover a{
+    color: #fa0;
+}
+
+#header .wrap nav ul.menu{
+    border-right: 1px solid #fa0;
+}
+#header .wrap nav ul.mypage{padding-right: 0;}
+#header .wrap nav ul.mypage li{}
+#header .wrap nav ul.mypage li:last-child a{margin-right: 0;}
+
+
+/* banner */
+#banner{
+    width: 100%; height: 580px;
+    position: relative;
+    overflow: hidden;
+}
+
+#banner .slideImg{
+    width: 100%; height: 100%;
+    display: flex;
+}
+#banner .slideImg li{
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+#banner .slideImg li.show{
+    opacity: 1;
+    z-index: 1;
+}
+
+#banner .title{
+    width: calc(50% - 20px);
+    max-width: 580px;
+    padding: 60px 4%;
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    display: inline-block;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 10;
+}
+#banner .title > div[class*="tri"]{
+    position: absolute;
+}
+#banner .title .tri1{
+    left: 20px; bottom: 20px;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid #fff;
+    border-left: 20px solid #fff;
+    border-right: 20px solid transparent;
+}
+#banner .title .tri2{
+    top: 20px; right: 20px;
+    border-top: 20px solid #fff;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid transparent;
+    border-right: 20px solid #fff;
+}
+#banner .title h2{
+    color: #fff;
+    font-size: 36px;
+    margin: 0;
+    padding-bottom: 16px;
+}
+#banner .title .btn{}
+#banner .title .btn button{
+    display: block;
+    border: none;
+    width: 180px;
+    text-align: left;
+    padding-left: 15px;
+    color: #fff;
+    background-color: #fa0;
+    line-height: 32px;
+    cursor: pointer;
+}
+#banner .arrow{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: left 0.5s, right 0.5s;
+    z-index: 101;
+}
+#banner .arrow img{
+    display: block;
+    height: 30px;
+}
+#banner .prev{left: -60px;}
+#banner .next{right: -60px;}
+#banner:hover .prev{left: 60px;}
+#banner:hover .next{right: 60px;}
+
+#banner ol{
+    position: absolute;
+    bottom: 20px; left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    z-index: 100;
+}
+#banner ol li{
+    width: 20px; height: 4px;
+    background-color: #ccc;
+    margin: 0 10px;
+    transition: width 0.5s;
+    cursor: pointer;
+}
+#banner ol li.active{
+    width: 40px;
+    background-color: #fa0;
+}
+
+/* main */
+#main{
+    background-image: url(../img/body_bg.jpg);
+}
+#main .darkBg{
+    width: 100%; height: 100%;
+    background-color: rgba(69,69,69,0.9);
+    padding: 60px 10px 140px;
+}
+
+/* brand */
+#main #brand{
+    color: #fff;
+    padding-bottom: 60px;
+}
+#main #brand .wrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+#main #brand .wrap .title{}
+#main #brand .wrap .title p{
+    font-size: 30px;
+    font-weight: bold;
+}
+#main #brand .wrap .frame{
+    display: flex;
+    flex-wrap: wrap;
+}
+#main #brand .wrap .frame .left{
+    width: calc(100% / 12 *  5 - 20px);
+    height: 340px;
+    margin: 0 10px;
+    position: relative;
+}
+#main #brand .wrap .frame .left .title{
+    border: 2px solid #fa0;
+    padding: 20px;
+    width: calc(100% / 5 * 3);
+    height: 200px;
+}
+#main #brand .wrap .frame .left .title p{
+    font-size: 30px;
+    font-weight: bold;
+}
+#main #brand .wrap .frame .left .bImg{
+    position: absolute;
+    bottom: 0; right: 0;
+    background-size: cover;
+    background-position: 50% 50%;
+    width: calc(100% / 4 * 3);
+    height: 260px;
+    background-image: url(../img/cont_01.jpg);
+}
+
+#main #brand .wrap .frame .right{
+    width: calc(100% / 12 * 7 - 20px);
+    margin: 0 10px;
+    background-image: url(../img/quotes_w.png);
+    background-repeat: no-repeat;
+    padding-top: 100px;
+    padding-left: 100px;
+}
+#main #brand .wrap .frame .right .top{}
+#main #brand .wrap .frame .right .top h3{
+    font-size: 30px;
+    margin: 0;
+    line-height: 35px;
+}
+#main #brand .wrap .frame .right .top h3 span{
+    font-size: 48px;
+    color: #fa0;
+    text-transform: uppercase;
+    margin-right: 10px;
+}
+#main #brand .wrap .frame .right .cont{padding-top: 60px;}
+#main #brand .wrap .frame .right .cont p{
+    line-height: 1.2;
+}
+
+
+/* cate */
+#main #category{
+    padding-top: 80px;
+}
+#main #category .wrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+#main #category .wrap .info{
+    display: flex;
+}
+#main #category .wrap .info .left{
+    width: calc(100% / 12 * 3 - 20px); height: 200px;
+    margin: 0 10px;
+    background-color: #fa0;
+    padding: 20px;
+}
+#main #category .wrap .info .left h3{
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+#main #category .wrap .info .right{
+    width: calc(100% / 12 * 9 - 20px);
+    margin: 0 10px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+#main #category .wrap .info .right p{
+    color: #fff;
+    padding-bottom: 30px;
+}
+
+/* tab */
+#main #category .wrap .tab{padding: 0 10px;}
+#main #category .wrap .tab .tab_btn{
+    width: 100%; height: 30px;
+    border-bottom: 1px solid #fa0;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 40px;
+}
+#main #category .wrap .tab .tab_btn .bOx{
+    position: absolute;
+    width: calc(100% / 3);
+    height: 100%;
+    background-color: #fa0;
+    z-index: -1;
+}
+#main #category .wrap .tab .tab_btn .bOx.active{
+    z-index: 1;
+}
+#main #category .wrap .tab .tab_btn ul{display: flex;}
+#main #category .wrap .tab .tab_btn ul li{
+    width: calc(100% / 3);
+}
+#main #category .wrap .tab .tab_btn ul li a{
+    display: block;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+    line-height: 30px;
+}
+
+#main #category .wrap .tab .tab_cont{
+    width: 100%; height: 300px;
+    position: relative;
+}
+#main #category .wrap .tab .tab_cont .tabBox{
+    width: 100%; 
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    top: 0; left: 0;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+#main #category .wrap .tab .tab_cont .tabBox.active{
+    z-index: 1;
+    opacity: 1;
+}
+#main #category .wrap .tab .tab_cont .tabBox > div{
+    width: calc(25% - 20px);
+    height: 300px;
+    margin: 0 10px 40px;
+    position: relative;
+    background-size: cover;
+    background-position: 50% 50%;
+    overflow: hidden;
+}
+#main #category .wrap .tab .tab_cont .tabBox > div .text{
+    width: 100%;
+    position: absolute;
+    bottom: -100%; left: 0;
+    padding: 20px;
+    background-color: rgba(0,0,0,0.5);
+    transition: bottom 0.5s;
+}
+#main #category .wrap .tab .tab_cont .tabBox > div:hover .text{
+    bottom: 0;
+}
+#main #category .wrap .tab .tab_cont .tabBox > div .text h4{
+    color: #fff;
+}
+#main #category .wrap .tab .tab_cont .tabBox > div .text a{
+    display: block;
+    float: right;
+    color: #fff;
+    border: 1px solid #fff;
+    border-radius: 15px;
+    width: 140px; height: 30px;
+    line-height: 28px;
+    font-size: 14px;
+    text-align: center;
+    transition: background-color 0.5s;
+}
+#main #category .wrap .tab .tab_cont .tabBox > div .text a:hover{
+    background-color: rgba(255,255,255,0.5);
+}
+
+
+/* popup */
+.dark{
+    width: 100%; height: 100%;
+    position: fixed;
+    top: 0; left: 0;
+    background-color: rgba(0,0,0,0.5);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.5s;
+    /* z-index: 10000;
+    opacity: 1; */
+}
+.dark.active{
+    z-index: 10000;
+    opacity: 1;
+}
+
+.popup{
+    position: fixed;
+    top: 50%; left: 50%;
+    transform: translate(-50%,-50%);
+    width: 500px; height: 500px;
+    background-color: #fff;
+    border-radius: 8px;
+    transition: opacity 0.5;
+    z-index: -1;
+    opacity: 0;
+}
+.popup.active{
+    z-index: 10000;
+    opacity: 1;
+}
+.popup .close{
+    position: absolute;
+    top: -20px; right: -30px;
+    color: #fff;
+    font-size: 30px;
+    cursor: pointer;
+}
+.popup .popBx{
+    padding: 20px;
+    width: 100%; height: 100%;
+}
+.popup .popBx .img{
+    width: 100%; height: 100%;
+    background-size: cover;
+    background-position: 50% 50%;
+    position: relative;
+}
+.popup .popBx .img p{
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%;
+    color: #fff;
+    text-align: right;
+    padding: 0 20px;
+    line-height: 40px;
+    background-color: rgba(255,127,0,0.75);
+    font-weight: bold;
+}
+
+
+/* footer */
+#footer{
+    background-color: #fa0;
+    padding: 20px 0;
+}
+#footer .wrap{
+    width: 1200px;
+    margin: 0 auto;
+}
+#footer .wrap p{
+    text-align: center;
+}
